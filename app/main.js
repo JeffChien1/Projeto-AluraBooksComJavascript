@@ -7,6 +7,6 @@ getBuscarLivrosDaApi();
 async function getBuscarLivrosDaApi() {
     const res = await fetch (endPointDaAPI);
     const livros = await res.json();
-    console.table(livros);
-    exibirLivrosNaTela(livros);
+    let livrosComDesconto = aplicarDesconto(livros);
+    exibirLivrosNaTela(livrosComDesconto);
 }
